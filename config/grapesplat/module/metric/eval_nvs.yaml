@@ -1,0 +1,17 @@
+# Metric module configuration
+# Variant: Novel view synthesis metrics enabled
+
+defaults:
+    - eval_all
+    - _self_
+
+depth1_absrel:
+    enabled: false
+depth1_delta1:
+    enabled: false
+depth2_ren_absrel:
+    enabled: false
+depth2_ren_delta1:
+    enabled: false
+point_cd_nc:
+    enabled: false

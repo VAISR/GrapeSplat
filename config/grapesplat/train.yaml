@@ -1,0 +1,15 @@
+# GrapeSplat experiment configuration
+# Variant: Training
+
+defaults:
+    - data: default
+    - module: default
+    - trainer: default
+    - _self_
+
+ckpt: null # NOTE: [last | null | {path}]
+node_ifname: lo
+seed: 902902902
+trainer:
+    devices: 4
+    num_nodes: 1

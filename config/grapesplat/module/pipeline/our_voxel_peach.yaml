@@ -1,0 +1,11 @@
+# Pipeline module configuration
+# Method: GrapeSplat [ours]
+# Variant: Per-axis Extent-normalized Assembly of Cue-aware Hypotenuse-companded Voxelization (PEACH-Vox) enabled
+
+defaults:
+    - our_voxel_affine
+    - _self_
+
+scene_decoder:
+    voxelize:
+        peach: true

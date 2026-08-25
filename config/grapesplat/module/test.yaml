@@ -1,0 +1,11 @@
+# GrapeSplat LightningModule configuration
+# Variant: Testing
+
+defaults:
+    - default
+    - _self_
+
+pipeline:
+    testing: true
+visualizer:
+    step_size: 3

@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: ScanNet++
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.scannetpp.ScanNetppDatasetBuilder
+      filter:
+          _target_: grapesplat.data.scannetpp.ScanNetppFilterBuilder
+          seq_len_min: 100
+          split_path: .data/scannetpp/split.jgz
+          split_size_test: 45
+          split_size_train: 810 # NOTE: 90% of 900
+          split_size_val: 45
+      root_path: .shared/datasets/ScanNetpp
+      weight_test: 1
+      weight_train: 5

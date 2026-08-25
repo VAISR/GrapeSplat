@@ -1,0 +1,45 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+
+# Checkpoints
+/.ckpt
+*.ckpt
+
+# Datasets
+/.data
+
+# Logs
+/.logs
+*.log
+
+# Models
+/.model
+
+# Shared storage. A link into the volume that holds the pretrained
+# weights and the datasets, so every config can name them by a path
+# inside the project. The link records an absolute target, which is
+# exactly why it never enters git
+/.shared
+
+# Output
+/output
+
+# Miscellaneous
+*.err
+*.gz
+*.local*
+*.pptx
+*.swp
+*.tgz
+*.zip
+.DS_Store

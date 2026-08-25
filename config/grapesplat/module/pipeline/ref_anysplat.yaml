@@ -1,0 +1,49 @@
+# Pipeline module configuration
+# Method: AnySplat [Jiang et al., 2025]
+
+_target_: grapesplat.module.pipeline.ref.PipelineAnySplatBuilder
+
+base:
+    ckpt: .shared/projects/lhjiang/anysplat
+
+depth2_image_decoder:
+    _target_: grapesplat.module.pipeline.Depth2ImageDecoderBuilder
+    antialiased: false
+    bgcolor: [1.0, 1.0, 1.0]
+    depth_mode: D
+    far: 1e+2
+    near: 1e-2
+    train_strat:
+        - _target_: grapesplat.module.pipeline.train.FullFTBuilder
+          grad: false
+          target: []
+
+scene_optimizer:
+    _target_: grapesplat.module.pipeline.SceneOptimizerBuilder
+    enabled: false
+    loss:
+        type: l1
+        weight: 1.0
+    optimizer:
+        _target_: grapesplat.module.optimizer.CompositeOptimizerBuilder
+        group:
+            - lr: 5e-3
+              params: color
+              weight_decay: 0.0
+            - lr: 5e-3
+              params: opacity
+              weight_decay: 0.0
+            - lr: 0.0
+              params: position
+              weight_decay: 0.0
+            - lr: 0.0
+              params: shape
+              weight_decay: 0.0
+        type: adam_w
+    scheduler:
+        _target_: grapesplat.module.scheduler.CompositeSchedulerBuilder
+        lr_decay_min: 1e-4
+        lr_warmup_iters_pr: 0.0
+    step: 128
+
+testing: false

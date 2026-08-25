@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: DTU
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.dtu.DTUDatasetBuilder
+      filter:
+          _target_: grapesplat.data.dtu.DTUFilterBuilder
+          seq_len_min: 49
+          split_path: .data/dtu/split.jgz
+          split_size_test: 22
+          split_size_train: 0
+          split_size_val: 0
+      root_path: .shared/datasets/DTU
+      weight_test: 1
+      weight_train: 0

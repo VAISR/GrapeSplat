@@ -1,0 +1,17 @@
+# Metric module configuration
+# Variant: All evaluation metrics enabled
+
+defaults:
+    - default
+    - _self_
+
+depth2_rec_absrel:
+    enabled: false
+depth2_rec_delta1:
+    enabled: false
+image_rec_lpips:
+    enabled: false
+image_rec_psnr:
+    enabled: false
+image_rec_ssim:
+    enabled: false

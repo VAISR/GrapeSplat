@@ -1,0 +1,12 @@
+# Pipeline module configuration
+# Method: 2Xplat [Jeong et al., 2026]
+
+_target_: grapesplat.module.pipeline.ref.PipelineTwoXplatBuilder
+
+defaults:
+    - ref_anysplat
+    - _self_
+
+base:
+    ckpt: .shared/projects/HwasikJeong/2Xplat/2xplat_dl3dv_hr.pt
+frame_resol: "${data.transform.frame_resol}"

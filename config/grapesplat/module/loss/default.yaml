@@ -1,0 +1,23 @@
+# Loss module configuration
+
+_target_: grapesplat.module.loss.CompositeLossBuilder
+
+cam:
+    type: l1
+    weight: 5.0
+depth1:
+    type: l1_grad_nll
+    weight: 1.0
+depth2:
+    type: l1_grad
+    weight: 0.5
+image:
+    perc:
+        type: lpips
+        weight: 0.05
+    regr:
+        type: l2
+        weight: 1.0
+point:
+    type: l1_grad_nll
+    weight: 0.5

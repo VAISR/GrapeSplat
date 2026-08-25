@@ -1,0 +1,73 @@
+[submodule "gitmodules/anysplat"]
+	path = gitmodules/anysplat
+	url = https://github.com/AsherJingkongChen/AnySplat
+[submodule "gitmodules/arkitscenes"]
+	path = gitmodules/arkitscenes
+	url = https://github.com/apple/ARKitScenes
+[submodule "gitmodules/co3d"]
+	path = gitmodules/co3d
+	url = https://github.com/facebookresearch/co3d
+[submodule "gitmodules/da3"]
+	path = gitmodules/da3
+	url = https://github.com/AsherJingkongChen/Depth-Anything-3
+[submodule "gitmodules/diff_gauss_pose"]
+	path = gitmodules/diff_gauss_pose
+	url = https://github.com/AsherJingkongChen/diff_gauss_pose
+	branch = pose
+[submodule "gitmodules/diod"]
+	path = gitmodules/diod
+	url = https://github.com/AsherJingkongChen/deep-image-orientation-detection
+[submodule "gitmodules/dvlt"]
+	path = gitmodules/dvlt
+	url = https://github.com/AsherJingkongChen/dvlt
+[submodule "gitmodules/eth3d"]
+	path = gitmodules/eth3d
+	url = https://github.com/ETH3D/dataset-pipeline
+[submodule "gitmodules/fsspec"]
+	path = gitmodules/fsspec
+	url = https://github.com/AsherJingkongChen/filesystem_spec
+[submodule "gitmodules/fused-ssim"]
+	path = gitmodules/fused-ssim
+	url = https://github.com/AsherJingkongChen/fused-ssim
+[submodule "gitmodules/gsplat"]
+	path = gitmodules/gsplat
+	url = https://github.com/AsherJingkongChen/gsplat
+[submodule "gitmodules/hypersim"]
+	path = gitmodules/hypersim
+	url = https://github.com/apple/ml-hypersim
+[submodule "gitmodules/lpips"]
+	path = gitmodules/lpips
+	url = https://github.com/AsherJingkongChen/PerceptualSimilarity
+[submodule "gitmodules/nrgbd"]
+	path = gitmodules/nrgbd
+	url = https://github.com/dazinovic/neural-rgbd-surface-reconstruction
+[submodule "gitmodules/pytorch3d"]
+	path = gitmodules/pytorch3d
+	url = https://github.com/AsherJingkongChen/pytorch3d
+[submodule "gitmodules/scannetpp"]
+	path = gitmodules/scannetpp
+	url = https://github.com/AsherJingkongChen/scannetpp
+[submodule "gitmodules/splatweaver"]
+	path = gitmodules/splatweaver
+	url = https://github.com/AsherJingkongChen/SplatWeaver
+[submodule "gitmodules/structsplat"]
+	path = gitmodules/structsplat
+	url = https://github.com/AsherJingkongChen/StructSplat
+[submodule "gitmodules/tartanair_v1"]
+	path = gitmodules/tartanair_v1
+	url = https://github.com/castacks/tartanair_tools
+[submodule "gitmodules/tartanair_v2"]
+	path = gitmodules/tartanair_v2
+	url = https://github.com/AsherJingkongChen/tartanairpy
+[submodule "gitmodules/torchsparse"]
+	path = gitmodules/torchsparse
+	url = https://github.com/AsherJingkongChen/torchsparse
+[submodule "gitmodules/twoxplat"]
+	path = gitmodules/twoxplat
+	url = https://github.com/AsherJingkongChen/2Xplat
+[submodule "gitmodules/vggt"]
+	path = gitmodules/vggt
+	url = https://github.com/AsherJingkongChen/vggt
+[submodule "gitmodules/wildrgbd"]
+	path = gitmodules/wildrgbd
+	url = https://github.com/wildrgbd/wildrgbd

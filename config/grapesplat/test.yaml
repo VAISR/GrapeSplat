@@ -1,0 +1,11 @@
+# GrapeSplat experiment configuration
+# Variant: Testing
+
+defaults:
+    - train
+    - override module: test
+    - _self_
+
+trainer:
+    devices: 1
+    num_nodes: 1

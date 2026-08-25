@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: ARKitScenes
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.arkitscenes.ARKitScenesDatasetBuilder
+      filter:
+          _target_: grapesplat.data.arkitscenes.ARKitScenesFilterBuilder
+          seq_len_min: 100
+          split_path: .data/arkitscenes/split.jgz
+          split_size_test: 230
+          split_size_train: 4140 # NOTE: 90% of 4500
+          split_size_val: 230
+      root_path: .shared/datasets/ARKitScenes
+      weight_test: 1
+      weight_train: 2

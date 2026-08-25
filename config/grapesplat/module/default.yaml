@@ -1,0 +1,13 @@
+# GrapeSplat LightningModule configuration
+# Variant: Default
+
+_target_: grapesplat.module.GrapeSplatLightningModuleBuilder
+
+defaults:
+    - loss: default
+    - metric: default
+    - optimizer: default
+    - pipeline: default
+    - scheduler: default
+    - visualizer: default
+    - _self_

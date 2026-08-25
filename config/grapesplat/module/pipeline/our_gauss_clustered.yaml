@@ -1,0 +1,11 @@
+# Pipeline module configuration
+# Method: GrapeSplat [ours]
+# Variant: Gaussian clustered prediction enabled
+
+defaults:
+    - our_voxel_peach
+    - _self_
+
+scene_decoder:
+    gausshead:
+        count: 4

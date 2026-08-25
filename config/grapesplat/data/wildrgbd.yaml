@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: WildRGBD
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.wildrgbd.WildRGBDDatasetBuilder
+      filter:
+          _target_: grapesplat.data.wildrgbd.WildRGBDFilterBuilder
+          seq_len_min: 250
+          split_path: .data/wildrgbd/split.jgz
+          split_size_test: 216
+          split_size_train: 21168 # NOTE: 98% of 21600
+          split_size_val: 216
+      root_path: .shared/datasets/WildRGBD
+      weight_test: 1
+      weight_train: 1

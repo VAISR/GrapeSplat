@@ -1,0 +1,98 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=75.0"]
+
+[project]
+dependencies = [
+  "gsplat>=1.5.3",
+  "h5py>=3.16.0",
+  "huggingface-hub>=1.15.0",
+  "hydra-core>=1.3.4",
+  "kornia>=0.8.3",
+  "lightning>=2.6.5",
+  "matplotlib>=3.11.0",
+  "numpy<=1.26.4",
+  "omegaconf>=2.3.1",
+  "orjson>=3.11.7",
+  "psutil>=7.2.2",
+  "pycolmap>=4.1.0",
+  "pytest>=9.1.1",
+  "rich>=15.0.0",
+  "torch-scatter>=2.1.2",
+  "torch<=2.10.0",
+  "torchdata>=0.11.0",
+  "torchvision<=0.25.0",
+  "tqdm>=4.68.3",
+  "wandb>=0.28.0",
+  "anysplat",
+  "depth-anything-3",
+  "diff-gauss-pose",
+  "diod",
+  "dvlt",
+  "fsspec",
+  "fused-ssim",
+  "lpips",
+  "pytorch3d",
+  "splatweaver",
+  "structsplat",
+  "torchsparse",
+  "twoxplat",
+  "vggt",
+  "transformers>=5.13.0",
+]
+description = "Pose-Free Feed-forward 3D Reconstruction for Novel View Synthesis"
+name = "pfff_3dr_nvs"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.0.0"
+
+[project.scripts]
+get_grapesplat_module_train_strat = "script.get_grapesplat_module_train_strat:main"
+make_default_ckpt = "script.make_default_ckpt:main"
+patch_arkitscenes_metadata = "script.patch_arkitscenes_metadata:main"
+run_once = "script.run_once:main"
+run_eval = "script.run_eval:main"
+run_eval_log = "script.run_eval_log:main"
+test_grapesplat_data_datamodule = "script.test_grapesplat_data_datamodule:main"
+test_grapesplat_module_pipeline_orchestrator = "script.test_grapesplat_module_pipeline_orchestrator:main"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  "ignore:Module already imported:pytest.PytestAssertRewriteWarning",
+  "ignore:The argument 'device' of Tensor\\.(pin_memory|is_pinned)\\(\\) is deprecated:DeprecationWarning",
+]
+
+[tool.ruff]
+exclude = ["gitmodules"]
+line-length = 100
+
+[tool.setuptools.packages.find]
+include = ["grapesplat*", "script*"]
+where = ["src"]
+
+[tool.uv.extra-build-dependencies]
+anysplat = ["torch<=2.10.0"]
+diff-gauss-pose = ["torch<=2.10.0"]
+fused-ssim = ["torch<=2.10.0"]
+gsplat = ["torch<=2.10.0"]
+pytorch3d = ["torch<=2.10.0"]
+splatweaver = ["torch<=2.10.0"]
+torch-scatter = ["torch<=2.10.0"]
+torchsparse = ["torch<=2.10.0"]
+
+[tool.uv.sources]
+anysplat = {path = "gitmodules/anysplat", editable = true}
+depth-anything-3 = {path = "gitmodules/da3", editable = true}
+diod = {path = "gitmodules/diod", editable = true}
+diff-gauss-pose = {path = "gitmodules/diff_gauss_pose", editable = true}
+dvlt = {path = "gitmodules/dvlt", editable = true}
+fsspec = {path = "gitmodules/fsspec", editable = true}
+fused-ssim = {path = "gitmodules/fused-ssim", editable = true}
+gsplat = {path = "gitmodules/gsplat", editable = true}
+lpips = {path = "gitmodules/lpips", editable = true}
+pytorch3d = {path = "gitmodules/pytorch3d", editable = true}
+splatweaver = {path = "gitmodules/splatweaver", editable = true}
+structsplat = {path = "gitmodules/structsplat", editable = true}
+torchsparse = {path = "gitmodules/torchsparse", editable = true}
+twoxplat = {path = "gitmodules/twoxplat", editable = true}
+vggt = {path = "gitmodules/vggt", editable = true}

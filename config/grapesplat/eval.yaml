@@ -1,0 +1,56 @@
+# GrapeSplat experiment configuration
+# Variant: Full evaluation
+
+bench:
+    # module/metric={key 1} data={key 2} +view@data={key 3}
+    eval_all:
+        dtu:
+            - c4n8
+            - c8n16
+            - c16n32
+        eth3d:
+            - c4n8
+        nrgbd:
+            - c4n8
+            - c8n16
+            - c16n32
+            - c32n64
+            - c64n128
+        scannetpp:
+            - c4n8
+            - c8n16
+            - c16n32
+            - c32n64
+        sevenscenes:
+            - c4n8
+            - c8n16
+            - c16n32
+            - c32n64
+            - c64n128
+    eval_nvs:
+        dl3dv:
+            - c4n8
+            - c8n16
+            - c16n32
+            - c32n64
+            - c64n128
+
+ckpt_dir: .model/
+
+fig_dir: output/figure/
+
+method:
+    # module/pipeline={value}
+    # - default
+    - our_black_bgcolored
+    # - our_gauss_clustered
+    # - our_sem_encoded
+    # - our_voxel_affine
+    # - our_voxel_peach
+    # - ref_anysplat
+    # - ref_da3
+    # - ref_splatweaver
+    # - ref_structsplat
+    # - ref_twoxplat
+
+worker_count: 4

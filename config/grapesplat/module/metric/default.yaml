@@ -1,0 +1,35 @@
+# Metric module configuration
+# Variant: Default
+
+_target_: grapesplat.module.metric.CompositeMetricBuilder
+
+depth1_absrel:
+    enabled: true
+depth1_delta1:
+    enabled: true
+depth2_rec_absrel:
+    enabled: true
+depth2_rec_delta1:
+    enabled: true
+depth2_ren_absrel:
+    enabled: true
+depth2_ren_delta1:
+    enabled: true
+image_rec_lpips:
+    enabled: true
+image_rec_psnr:
+    enabled: true
+image_rec_ssim:
+    enabled: true
+image_ren_lpips:
+    enabled: true
+image_ren_psnr:
+    enabled: true
+image_ren_ssim:
+    enabled: true
+point_cd_nc:
+    enabled: true
+pose_rel_auc3:
+    enabled: true
+pose_rel_auc30:
+    enabled: true

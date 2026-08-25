@@ -1,0 +1,13 @@
+# Pipeline module configuration
+# Method: DA3 [Lin et al., 2025]
+
+_target_: grapesplat.module.pipeline.ref.PipelineDA3Builder
+
+defaults:
+    - ref_anysplat
+    - _self_
+
+base:
+    ckpt: .shared/projects/depth-anything/DA3-GIANT-1.1
+depth2_image_decoder:
+    bgcolor: [0.0, 0.0, 0.0]

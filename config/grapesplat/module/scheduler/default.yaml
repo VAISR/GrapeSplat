@@ -1,0 +1,6 @@
+# Scheduler module configuration
+
+_target_: grapesplat.module.scheduler.CompositeSchedulerBuilder
+
+lr_decay_min: 1e-5
+lr_warmup_iters_pr: 0.01

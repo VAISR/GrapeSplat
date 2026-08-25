@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: TartanAirV2
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.tartanairv2.TartanAirV2DatasetBuilder
+      filter:
+          _target_: grapesplat.data.tartanairv2.TartanAirV2FilterBuilder
+          seq_len_min: 100
+          split_path: .data/tartanairv2/split.jgz
+          split_size_test: 44
+          split_size_train: 1012 # NOTE: 92% of 1100
+          split_size_val: 44
+      root_path: .shared/datasets/TartanAirV2
+      weight_test: 1
+      weight_train: 5

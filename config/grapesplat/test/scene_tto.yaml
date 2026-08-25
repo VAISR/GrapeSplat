@@ -1,0 +1,6 @@
+# GrapeSplat test configuration
+# Variant: Scene-TTO enabled
+
+pipeline:
+    scene_optimizer:
+        enabled: true

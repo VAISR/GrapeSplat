@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: DL3DV
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.dl3dv.DL3DVDatasetBuilder
+      filter:
+          _target_: grapesplat.data.dl3dv.DL3DVFilterBuilder
+          seq_len_min: 300
+          split_path: .data/dl3dv/split.jgz
+          split_size_test: 140
+          split_size_train: 0
+          split_size_val: 0
+      root_path: .shared/datasets/DL3DV-Benchmark
+      weight_test: 1
+      weight_train: 0

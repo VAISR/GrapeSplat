@@ -1,0 +1,5 @@
+# Visualizer module configuration
+
+_target_: grapesplat.module.visualizer.CompositeVisualizerBuilder
+
+step_size: 8

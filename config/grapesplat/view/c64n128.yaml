@@ -1,0 +1,6 @@
+# GrapeSplat view configuration
+# Variant: 64-view reconstruction for 128-view rendering, 192-view combined
+
+transform:
+    seq_size: 192
+    seq_size_rec: 64

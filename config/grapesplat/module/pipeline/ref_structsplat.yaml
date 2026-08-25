@@ -1,0 +1,11 @@
+# Pipeline module configuration
+# Method: StructSplat [Zhao et al., 2026]
+
+_target_: grapesplat.module.pipeline.ref.PipelineStructSplatBuilder
+
+defaults:
+    - ref_da3
+    - _self_
+
+base:
+    ckpt: .shared/projects/DazzlingSun/structsplat

@@ -1,0 +1,11 @@
+# Pipeline module configuration
+# Method: SplatWeaver [Wan et al., 2025]
+
+_target_: grapesplat.module.pipeline.ref.PipelineSplatWeaverBuilder
+
+defaults:
+    - ref_anysplat
+    - _self_
+
+base:
+    ckpt: .shared/projects/Jeasco/SplatWeaver

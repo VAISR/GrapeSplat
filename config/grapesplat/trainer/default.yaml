@@ -1,0 +1,46 @@
+# Trainer configuration
+
+_target_: lightning.pytorch.Trainer
+
+accelerator: cuda
+accumulate_grad_batches: 1
+callbacks:
+    - _target_: grapesplat.trainer.callback.CacheCleanup
+    - _target_: grapesplat.trainer.callback.OnKeyboardInterruptCleanup
+    - _target_: grapesplat.trainer.callback.ThroughputMonitor
+      window_size: 20
+    - _target_: lightning.pytorch.callbacks.ModelCheckpoint
+      auto_insert_metric_name: false
+      dirpath: .ckpt/
+      filename: "grapesplat-pipeline=${hydra:runtime.choices.module/pipeline}-epoch={epoch}-step={step}-psnr={validate/metric_image_rec_psnr:.3f}"
+      mode: max
+      monitor: validate/metric_image_rec_psnr
+      save_last: link
+      save_on_exception: true
+      save_on_train_epoch_end: true
+      save_top_k: -1
+    - _target_: lightning.pytorch.callbacks.RichModelSummary
+      max_depth: 3
+    - _target_: lightning.pytorch.callbacks.RichProgressBar
+      leave: true
+gradient_clip_algorithm: norm
+gradient_clip_val: 1.0
+log_every_n_steps: 5
+logger:
+    _target_: lightning.pytorch.loggers.WandbLogger
+    id: null
+    name: "${hydra:runtime.choices.module/pipeline}"
+    offline: false
+    project: grapesplat
+    save_dir: .logs/
+    settings:
+        x_stats_sampling_interval: 20.0
+max_epochs: 8
+max_time: null
+precision: bf16-mixed
+strategy:
+    _target_: lightning.pytorch.strategies.DDPStrategy
+    gradient_as_bucket_view: true
+    timeout:
+        _target_: datetime.timedelta
+        seconds: 600

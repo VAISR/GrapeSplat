@@ -1,0 +1,6 @@
+# Pipeline module configuration
+# Method: GrapeSplat [ours]
+
+defaults:
+    - our_gauss_clustered
+    - _self_

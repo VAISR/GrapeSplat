@@ -1,0 +1,18 @@
+# Pipeline module configuration
+# Method: GrapeSplat [ours]
+# Variant: Semantic image encoder enabled
+
+defaults:
+    - our_voxel_peach
+    - _self_
+
+base_sem:
+    ckpt: .shared/projects/facebook/dinov3-vith16plus-pretrain-lvd1689m
+image_encoder:
+    sem:
+        enabled: true
+scene_decoder:
+    voxelize:
+        feat_bridge:
+            sem:
+                enabled: true

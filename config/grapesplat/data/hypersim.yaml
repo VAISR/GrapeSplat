@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: Hypersim
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.hypersim.HypersimDatasetBuilder
+      filter:
+          _target_: grapesplat.data.hypersim.HypersimFilterBuilder
+          seq_len_min: 50
+          split_path: .data/hypersim/split.jgz
+          split_size_test: 75
+          split_size_train: 600 # NOTE: 80% of 750
+          split_size_val: 75
+      root_path: .shared/datasets/Hypersim
+      weight_test: 1
+      weight_train: 6

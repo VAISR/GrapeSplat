@@ -1,0 +1,10 @@
+# Pipeline module configuration
+# Method: GrapeSplat [ours]
+# Variant: Black background color enabled
+
+defaults:
+    - our_gauss_clustered
+    - _self_
+
+depth2_image_decoder:
+    bgcolor: [0.0, 0.0, 0.0]

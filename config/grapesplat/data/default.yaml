@@ -1,0 +1,83 @@
+# GrapeSplat DataModule configuration
+# Variant: Default
+
+_target_: grapesplat.data.GrapeSplatDataModuleBuilder
+
+dataset:
+    - _target_: grapesplat.data.arkitscenes.ARKitScenesDatasetBuilder
+      filter:
+          _target_: grapesplat.data.arkitscenes.ARKitScenesFilterBuilder
+          seq_len_min: 100
+          split_path: .data/arkitscenes/split.jgz
+          split_size_test: 230
+          split_size_train: 4140 # NOTE: 90% of 4500
+          split_size_val: 230
+      root_path: .shared/datasets/ARKitScenes
+      weight_test: 1
+      weight_train: 2
+
+    - _target_: grapesplat.data.hypersim.HypersimDatasetBuilder
+      filter:
+          _target_: grapesplat.data.hypersim.HypersimFilterBuilder
+          seq_len_min: 50
+          split_path: .data/hypersim/split.jgz
+          split_size_test: 75
+          split_size_train: 600 # NOTE: 80% of 750
+          split_size_val: 75
+      root_path: .shared/datasets/Hypersim
+      weight_test: 1
+      weight_train: 6
+
+    - _target_: grapesplat.data.scannetpp.ScanNetppDatasetBuilder
+      filter:
+          _target_: grapesplat.data.scannetpp.ScanNetppFilterBuilder
+          seq_len_min: 100
+          split_path: .data/scannetpp/split.jgz
+          split_size_test: 45
+          split_size_train: 810 # NOTE: 90% of 900
+          split_size_val: 45
+      root_path: .shared/datasets/ScanNetpp
+      weight_test: 1
+      weight_train: 5
+
+    - _target_: grapesplat.data.tartanairv2.TartanAirV2DatasetBuilder
+      filter:
+          _target_: grapesplat.data.tartanairv2.TartanAirV2FilterBuilder
+          seq_len_min: 100
+          split_path: .data/tartanairv2/split.jgz
+          split_size_test: 44
+          split_size_train: 1012 # NOTE: 92% of 1100
+          split_size_val: 44
+      root_path: .shared/datasets/TartanAirV2
+      weight_test: 1
+      weight_train: 5
+
+    - _target_: grapesplat.data.wildrgbd.WildRGBDDatasetBuilder
+      filter:
+          _target_: grapesplat.data.wildrgbd.WildRGBDFilterBuilder
+          seq_len_min: 250
+          split_path: .data/wildrgbd/split.jgz
+          split_size_test: 216
+          split_size_train: 21168 # NOTE: 98% of 21600
+          split_size_val: 216
+      root_path: .shared/datasets/WildRGBD
+      weight_test: 1
+      weight_train: 1
+
+loader:
+    batch_size: 1
+    drop_last: true
+    multiprocessing_context: fork
+    num_workers: null
+    persistent_workers: true
+    pin_memory: true
+    prefetch_factor: 2
+
+shared: true
+
+transform:
+    _target_: grapesplat.data.TransformBuilder
+    depth_bound_pr: [0.0, 0.98]
+    frame_resol: 448
+    seq_size: 8
+    seq_size_rec: 8

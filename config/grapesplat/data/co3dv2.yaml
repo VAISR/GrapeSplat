@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: CO3DV2
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.co3d.CO3DDatasetBuilder
+      filter:
+          _target_: grapesplat.data.co3d.CO3DFilterBuilder
+          seq_len_min: 200
+          split_path: .data/co3dv2/split.jgz
+          split_size_test: 250
+          split_size_train: 24500 # NOTE: 98% of 25000
+          split_size_val: 250
+      root_path: .shared/datasets/CO3DV2
+      weight_test: 1
+      weight_train: 1

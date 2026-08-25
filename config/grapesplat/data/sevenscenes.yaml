@@ -1,0 +1,19 @@
+# GrapeSplat DataModule configuration
+# Variant: 7Scenes
+
+defaults:
+    - default
+    - _self_
+
+dataset:
+    - _target_: grapesplat.data.sevenscenes.SevenScenesDatasetBuilder
+      filter:
+          _target_: grapesplat.data.sevenscenes.SevenScenesFilterBuilder
+          seq_len_min: 500
+          split_path: .data/sevenscenes/split.jgz
+          split_size_test: 18
+          split_size_train: 26
+          split_size_val: 2
+      root_path: .shared/datasets/SevenScenes
+      weight_test: 1
+      weight_train: 0
